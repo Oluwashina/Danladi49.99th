@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import Home from './pages/Home';
 import Itinerary from './pages/Itinerary';
 import Travel from './pages/Travel';
+import FAQs from './pages/FAQs';
 import Navbar from './components/Navbar';
 
 const PasswordProtection = ({ children }) => {
@@ -12,7 +13,7 @@ const PasswordProtection = ({ children }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password === 'paris2026') {
+    if (password === 'barcelona2026') {
       setIsAuthenticated(true);
       setError('');
     } else {
@@ -28,7 +29,7 @@ const PasswordProtection = ({ children }) => {
   return (
     <div className="password-screen animate-fade-in">
       <h2>DV 49.99th</h2>
-      <p style={{fontFamily: 'var(--font-serif)', fontStyle: 'italic', marginBottom: '2rem'}}>Barcelona, Spain &nbsp;&middot;&nbsp; 2026</p>
+      <p style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', marginBottom: '2rem' }}>Barcelona, Spain &nbsp;&middot;&nbsp; 2026</p>
       <form onSubmit={handleSubmit} className="password-form">
         <input
           type="password"
@@ -39,37 +40,38 @@ const PasswordProtection = ({ children }) => {
           autoFocus
         />
         {error && <p className="error-msg">{error}</p>}
-        <button type="submit" className="btn btn-gold" style={{marginTop: '1rem'}}>Enter</button>
+        <button type="submit" className="btn btn-gold" style={{ marginTop: '1rem' }}>Enter</button>
       </form>
     </div>
   );
 };
 
 const ScrollToTop = () => {
-    const { pathname } = useLocation();
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [pathname]);
-    return null;
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
 }
 
 const Footer = () => (
-    <footer className="footer section">
-        <p>&copy; {new Date().getFullYear()} Danladi49.9.com &nbsp;|&nbsp; DV 49.99th Celebration</p>
-    </footer>
+  <footer className="footer section">
+    <p>&copy; {new Date().getFullYear()} Danladi49.9.com &nbsp;|&nbsp; DV 49.99th Celebration</p>
+  </footer>
 );
 
 function App() {
   return (
     <PasswordProtection>
       <Router>
-        <ScrollToTop/>
+        <ScrollToTop />
         <Navbar />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/itinerary" element={<Itinerary />} />
             <Route path="/travel" element={<Travel />} />
+            <Route path="/faqs" element={<FAQs />} />
           </Routes>
         </main>
         <Footer />

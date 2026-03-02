@@ -34,7 +34,7 @@ const Travel = () => {
                     <p>
                         Transportation will be provided to and from this hotel for your convenience throughout the celebration weekend.
                     </p>
-                    <a href="https://www.hotelartsbarcelona.com/en/" target="_blank" rel="noreferrer" className="btn btn-gold">Book Hotel</a>
+                    <a href="https://www.ritzcarlton.com/en/hotels/bcnrz-hotel-arts-barcelona/overview/" target="_blank" rel="noreferrer" className="btn btn-gold">Book Hotel</a>
                 </div>
             </div>
         </div>
