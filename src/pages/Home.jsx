@@ -78,11 +78,11 @@ const Home = () => {
 
                     <div className="about-card animate-fade-in delay-300" style={{ backgroundColor: 'white', padding: '2.5rem', border: '1px solid var(--gray)', borderRadius: '0' }}>
                         <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: 'var(--gold)' }}>What's Included</h3>
-                        <ul style={{ color: 'var(--text-secondary)', lineHeight: '2', listPosition: 'inside' }}>
-                            <li>✓ Room block at Hotel Arts Barcelona</li>
-                            <li>✓ Curated celebration events</li>
-                            <li>✓ Welcome reception</li>
-                            <li>✓ Exclusive dining experiences</li>
+                        <ul style={{ color: 'var(--text-secondary)', marginLeft: '1px', lineHeight: '2', listStylePosition: 'inside' }}>
+                            <li>Room block at Hotel Arts Barcelona</li>
+                            <li>Curated celebration events</li>
+                            <li>Welcome reception</li>
+                            <li>Exclusive dining experiences</li>
                         </ul>
                     </div>
                 </div>
