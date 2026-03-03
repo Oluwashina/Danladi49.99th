@@ -8,7 +8,7 @@ const Home = () => {
             {/* Hero Section */}
             <section className="hero">
                 <img
-                    src="/barcelona2.jpg"
+                    src="/barcelona3.png"
                     alt="Sunset over Barcelona"
                     className="hero-bg"
                 />
