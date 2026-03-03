@@ -29,10 +29,7 @@ const Travel = () => {
                     <Building size={48} strokeWidth={1} />
                     <h3>Accommodation</h3>
                     <p>
-                        All guests are kindly encouraged to book their stay at <strong>Hotel Arts Barcelona</strong>, where a room block has been reserved for our group.
-                    </p>
-                    <p>
-                        Transportation will be provided to and from this hotel for your convenience throughout the celebration weekend.
+                        We have curated a selection of hotels for your convenience. Transportation will be provided to and from these hotels to ensure a seamless experience. Please proceed with making your booking here.
                     </p>
                     <a href="https://www.marriott.com/en-gb/event-reservations/reservation-link.mi?id=1768927128258&key=GRP&app=resvlink&_branch_match_id=1554240861956515237&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXTywo0MtNLCrKzC8p0UvOz9UvSi3OyczLtgdK2ALZZSCOWmaKraG5mYWlkbmhkYWRqYVadmqlrXtQgFpdUWpaKlB3Xnp8UlF%2BeXFqkW1wYlpiUSYA2ADg8WAAAAA%3D" target="_blank" rel="noreferrer" className="btn btn-gold">Book Hotel</a>
                 </div>
