@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -34,8 +35,7 @@ const Navbar = () => {
         <>
             <header className={`nav-header ${scrolled ? 'scrolled' : ''}`}>
                 <Link to="/" className="nav-logo" onClick={closeMenu}>
-                    <h1>DV</h1>
-                    <span>49.99th</span>
+                    <img src={logo} alt="DV 49.99th Barcelona" style={{ height: 'auto', width: '100px',}} />
                 </Link>
                 <button className="nav-toggle" onClick={toggleMenu} aria-label="Toggle Navigation">
                     <span className="hamburger-line" style={{ transform: isOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }}></span>
