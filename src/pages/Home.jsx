@@ -8,13 +8,13 @@ const Home = () => {
             {/* Hero Section */}
             <section className="hero">
                 <img
-                    src="/barcelona.png"
+                    src="/barcelona2.jpg"
                     alt="Sunset over Barcelona"
                     className="hero-bg"
                 />
                 <div className="hero-overlay"></div>
                 <div className="hero-content">
-                    <span className="hero-subtitle animate-fade-in delay-100">JOIN US IN</span>
+                    <span className="hero-subtitle animate-fade-in delay-100">JOIN DV IN</span>
                     <h1 className="hero-title animate-fade-in delay-200">Barcelona</h1>
                     <p className="hero-date animate-fade-in delay-300">MAY 7–10, 2026</p>
                 </div>
@@ -74,16 +74,6 @@ const Home = () => {
                         <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
                             Barcelona is a city of vibrant culture, stunning architecture, Mediterranean beaches, and world-class cuisine. The perfect backdrop for an extraordinary celebration. From Gaudí's artistic wonders to beachfront dining, every moment in Barcelona is magical.
                         </p>
-                    </div>
-
-                    <div className="about-card animate-fade-in delay-300" style={{ backgroundColor: 'white', padding: '2.5rem', border: '1px solid var(--gray)', borderRadius: '0' }}>
-                        <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: 'var(--gold)' }}>What's Included</h3>
-                        <ul style={{ color: 'var(--text-secondary)', marginLeft: '1px', lineHeight: '2', listStylePosition: 'inside' }}>
-                            <li>Room block at Hotel Arts Barcelona</li>
-                            <li>Curated celebration events</li>
-                            <li>Welcome reception</li>
-                            <li>Exclusive dining experiences</li>
-                        </ul>
                     </div>
                 </div>
             </section>
