@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CheckCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const RSVP = () => {
+    useEffect(() => {
+        emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    }, []);
+
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
@@ -16,6 +21,7 @@ const RSVP = () => {
     });
 
     const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -27,25 +33,57 @@ const RSVP = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission here (send to email or backend)
-        console.log('Form submitted:', formData);
-        setSubmitted(true);
-        // Reset form after 3 seconds
-        setTimeout(() => {
-            setFormData({
-                fullName: '',
-                email: '',
-                mobileNumber: '',
-                attendance: '',
-                bringGuest: '',
-                guestName: '',
-                dietary: '',
-                hotelSelection: '',
-                arrivalDate: '',
-                departureDate: ''
+        setLoading(true);
+
+        // Map hotel selection to readable name
+        const hotelMap = {
+            'hotel-arts': 'Hotel Arts Barcelona',
+            'other': 'Other Hotel'
+        };
+
+        const hotelDisplay = hotelMap[formData.hotelSelection] || formData.hotelSelection;
+        
+        const templateParams = {
+            to_email: 'thedevoluwashina@gmail.com',
+            subject: `New RSVP from ${formData.fullName}`,
+            from_email: formData.email,
+            from_name: formData.fullName,
+            attendance: formData.attendance,
+            guest_name: formData.guestName || 'None',
+            bring_guest: formData.bringGuest,
+            mobile: formData.mobileNumber,
+            dietary: formData.dietary || 'None',
+            hotel: hotelDisplay,
+            arrival: formData.arrivalDate,
+            departure: formData.departureDate
+        };
+
+        emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, templateParams)
+            .then((response) => {
+                console.log('Email sent successfully:', response);
+                setLoading(false);
+                setSubmitted(true);
+                setTimeout(() => {
+                    setFormData({
+                        fullName: '',
+                        email: '',
+                        mobileNumber: '',
+                        attendance: '',
+                        bringGuest: '',
+                        guestName: '',
+                        dietary: '',
+                        hotelSelection: '',
+                        arrivalDate: '',
+                        departureDate: ''
+                    });
+                    setSubmitted(false);
+                }, 3000);
+            })
+            .catch((error) => {
+                console.error('Error sending email:', error);
+                setLoading(false);
+                alert('There was an error submitting your RSVP. Please try again.');
             });
-            setSubmitted(false);
-        }, 3000);
     };
 
     if (submitted) {
@@ -89,7 +127,7 @@ const RSVP = () => {
                             padding: '0.75rem',
                             border: '1px solid var(--gray)',
                             borderRadius: '0',
-                            fontSize: '0.95rem',
+                            fontSize: '16px',
                             boxSizing: 'border-box'
                         }}
                         placeholder="Enter your full name"
@@ -112,7 +150,7 @@ const RSVP = () => {
                             padding: '0.75rem',
                             border: '1px solid var(--gray)',
                             borderRadius: '0',
-                            fontSize: '0.95rem',
+                            fontSize: '16px',
                             boxSizing: 'border-box'
                         }}
                         placeholder="your.email@example.com"
@@ -135,7 +173,7 @@ const RSVP = () => {
                             padding: '0.75rem',
                             border: '1px solid var(--gray)',
                             borderRadius: '0',
-                            fontSize: '0.95rem',
+                            fontSize: '16px',
                             boxSizing: 'border-box'
                         }}
                         placeholder="+1 (555) 000-0000"
@@ -228,7 +266,7 @@ const RSVP = () => {
                                 padding: '0.75rem',
                                 border: '1px solid var(--gray)',
                                 borderRadius: '0',
-                                fontSize: '0.95rem',
+                                fontSize: '16px',
                                 boxSizing: 'border-box'
                             }}
                             placeholder="Enter guest's full name"
@@ -250,7 +288,7 @@ const RSVP = () => {
                             padding: '0.75rem',
                             border: '1px solid var(--gray)',
                             borderRadius: '0',
-                            fontSize: '0.95rem',
+                            fontSize: '16px',
                             boxSizing: 'border-box',
                             minHeight: '80px',
                             fontFamily: 'inherit'
@@ -310,7 +348,7 @@ const RSVP = () => {
                             padding: '0.75rem',
                             border: '1px solid var(--gray)',
                             borderRadius: '0',
-                            fontSize: '0.95rem',
+                            fontSize: '16px',
                             boxSizing: 'border-box'
                         }}
                     />
@@ -332,7 +370,7 @@ const RSVP = () => {
                             padding: '0.75rem',
                             border: '1px solid var(--gray)',
                             borderRadius: '0',
-                            fontSize: '0.95rem',
+                            fontSize: '16px',
                             boxSizing: 'border-box'
                         }}
                     />
@@ -343,9 +381,14 @@ const RSVP = () => {
                     <button
                         type="submit"
                         className="btn btn-gold"
-                        style={{ minWidth: '200px' }}
+                        disabled={loading}
+                        style={{ 
+                            minWidth: '200px',
+                            opacity: loading ? 0.6 : 1,
+                            cursor: loading ? 'not-allowed' : 'pointer'
+                        }}
                     >
-                        Submit RSVP
+                        {loading ? 'Submitting...' : 'Submit RSVP'}
                     </button>
                 </div>
             </form>
