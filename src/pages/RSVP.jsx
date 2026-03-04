@@ -107,7 +107,7 @@ const RSVP = () => {
         <div className="container section animate-fade-in" style={{ paddingTop: '10rem', paddingBottom: '6rem' }}>
             <h1 className="page-title">RSVP</h1>
             <p style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto 3rem', color: 'var(--text-secondary)', fontSize: '1.1rem' }}>
-                Please complete this form to confirm your attendance. We need your response by March 20, 2026.
+                Please complete this form to confirm your attendance. Kindly confirm on or before March 20, 2026.
             </p>
 
             <form onSubmit={handleSubmit} style={{ maxWidth: '600px', margin: '0 auto' }}>

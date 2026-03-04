@@ -250,7 +250,6 @@ const Home = () => {
             {/* Personal Note Section */}
             <section className="container section" style={{ backgroundColor: '#f9f7f3', padding: '6rem 5%', textAlign: 'center' }}>
                 <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-                    <h2 style={{ fontSize: '1.8rem', marginBottom: '2rem', fontStyle: 'italic', fontWeight: 400 }}>A Note</h2>
                     <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', lineHeight: '1.8', marginBottom: '1.5rem' }}>
                         This weekend is about celebration and the people who have shaped the journey.
                     </p>

@@ -58,7 +58,7 @@ const ScrollToTop = () => {
 
 const Footer = () => (
   <footer className="footer section">
-    <p>&copy; {new Date().getFullYear()} Danladi 49.99<sup>th</sup></p>
+    <p>&copy; {new Date().getFullYear()} DV 49.99<sup>th</sup></p>
   </footer>
 );
 

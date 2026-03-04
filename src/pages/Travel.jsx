@@ -35,7 +35,7 @@ const Travel = () => {
                     </p>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                         <a href="https://www.marriott.com/en-gb/event-reservations/reservation-link.mi?id=1768927128258&key=GRP&app=resvlink&_branch_match_id=1554240861956515237&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXTywo0MtNLCrKzC8p0UvOz9UvSi3OyczLtgdK2ALZZSCOWmaKraG5mYWlkbmhkYWRqYVadmqlrXtQgFpdUWpaKlB3Xnp8UlF%2BeXFqkW1wYlpiUSYA2ADg8WAAAAA%3D" target="_blank" rel="noreferrer" className="btn btn-gold">Book Hotel Arts</a>
-                        <a href="https://www.marriott.com/en-gb/event-reservations/reservation-link.mi?id=1768927128258&key=GRP&app=resvlink&_branch_match_id=1554240861956515237&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXTywo0MtNLCrKzC8p0UvOz9UvSi3OyczLtgdK2ALZZSCOWmaKraG5mYWlkbmhkYWRqYVadmqlrXtQgFpdUWpaKlB3Xnp8UlF%2BeXFqkW1wYlpiUSYA2ADg8WAAAAA%3D" target="_blank" rel="noreferrer" className="btn">Book Optional Hotels</a>
+                        <a className="btn">Book Optional Hotels</a>
                     </div>
                 </div>
             </div>
