@@ -1,0 +1,356 @@
+import React, { useState } from 'react';
+import { CheckCircle } from 'lucide-react';
+
+const RSVP = () => {
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email: '',
+        mobileNumber: '',
+        attendance: '',
+        bringGuest: '',
+        guestName: '',
+        dietary: '',
+        hotelSelection: '',
+        arrivalDate: '',
+        departureDate: ''
+    });
+
+    const [submitted, setSubmitted] = useState(false);
+
+    const handleChange = (e) => {
+        const { name, value, type, checked } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: type === 'checkbox' ? checked : value
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Handle form submission here (send to email or backend)
+        console.log('Form submitted:', formData);
+        setSubmitted(true);
+        // Reset form after 3 seconds
+        setTimeout(() => {
+            setFormData({
+                fullName: '',
+                email: '',
+                mobileNumber: '',
+                attendance: '',
+                bringGuest: '',
+                guestName: '',
+                dietary: '',
+                hotelSelection: '',
+                arrivalDate: '',
+                departureDate: ''
+            });
+            setSubmitted(false);
+        }, 3000);
+    };
+
+    if (submitted) {
+        return (
+            <div className="container section" style={{ paddingTop: '15rem', paddingBottom: '15rem', textAlign: 'center' }}>
+                <div style={{ maxWidth: '500px', margin: '0 auto' }}>
+                    <CheckCircle size={64} style={{ color: 'var(--gold)', marginBottom: '1.5rem' }} />
+                    <h2 style={{ fontSize: '2rem', marginBottom: '1rem', fontStyle: 'italic' }}>Thank You!</h2>
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', marginBottom: '1.5rem' }}>
+                        Your RSVP has been received. We look forward to seeing you in Barcelona!
+                    </p>
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+                        A confirmation email will be sent to you shortly.
+                    </p>
+                </div>
+            </div>
+        );
+    }
+
+    return (
+        <div className="container section animate-fade-in" style={{ paddingTop: '10rem', paddingBottom: '6rem' }}>
+            <h1 className="page-title">RSVP</h1>
+            <p style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto 3rem', color: 'var(--text-secondary)', fontSize: '1.1rem' }}>
+                Please complete this form to confirm your attendance. We need your response by March 20, 2026.
+            </p>
+
+            <form onSubmit={handleSubmit} style={{ maxWidth: '600px', margin: '0 auto' }}>
+                {/* Full Name */}
+                <div style={{ marginBottom: '2rem' }}>
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600, fontSize: '0.95rem' }}>
+                        Full Name <span style={{ color: 'var(--gold)' }}>*</span>
+                    </label>
+                    <input
+                        type="text"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleChange}
+                        required
+                        style={{
+                            width: '100%',
+                            padding: '0.75rem',
+                            border: '1px solid var(--gray)',
+                            borderRadius: '0',
+                            fontSize: '0.95rem',
+                            boxSizing: 'border-box'
+                        }}
+                        placeholder="Enter your full name"
+                    />
+                </div>
+
+                {/* Email Address */}
+                <div style={{ marginBottom: '2rem' }}>
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600, fontSize: '0.95rem' }}>
+                        Email Address <span style={{ color: 'var(--gold)' }}>*</span>
+                    </label>
+                    <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        style={{
+                            width: '100%',
+                            padding: '0.75rem',
+                            border: '1px solid var(--gray)',
+                            borderRadius: '0',
+                            fontSize: '0.95rem',
+                            boxSizing: 'border-box'
+                        }}
+                        placeholder="your.email@example.com"
+                    />
+                </div>
+
+                {/* Mobile Number */}
+                <div style={{ marginBottom: '2rem' }}>
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600, fontSize: '0.95rem' }}>
+                        Mobile Number <span style={{ color: 'var(--gold)' }}>*</span>
+                    </label>
+                    <input
+                        type="tel"
+                        name="mobileNumber"
+                        value={formData.mobileNumber}
+                        onChange={handleChange}
+                        required
+                        style={{
+                            width: '100%',
+                            padding: '0.75rem',
+                            border: '1px solid var(--gray)',
+                            borderRadius: '0',
+                            fontSize: '0.95rem',
+                            boxSizing: 'border-box'
+                        }}
+                        placeholder="+1 (555) 000-0000"
+                    />
+                </div>
+
+                {/* Will you attend? */}
+                <div style={{ marginBottom: '2rem' }}>
+                    <fieldset style={{ border: 'none', padding: 0, margin: 0 }}>
+                        <legend style={{ fontWeight: 600, fontSize: '0.95rem', marginBottom: '0.75rem', display: 'block' }}>
+                            Will you attend? <span style={{ color: 'var(--gold)' }}>*</span>
+                        </legend>
+                        <div style={{ display: 'flex', gap: '2rem' }}>
+                            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
+                                <input
+                                    type="radio"
+                                    name="attendance"
+                                    value="yes"
+                                    checked={formData.attendance === 'yes'}
+                                    onChange={handleChange}
+                                    required
+                                    style={{ cursor: 'pointer' }}
+                                />
+                                Yes
+                            </label>
+                            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
+                                <input
+                                    type="radio"
+                                    name="attendance"
+                                    value="no"
+                                    checked={formData.attendance === 'no'}
+                                    onChange={handleChange}
+                                    required
+                                    style={{ cursor: 'pointer' }}
+                                />
+                                Regretfully No
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                {/* Will you bring a guest? */}
+                <div style={{ marginBottom: '2rem' }}>
+                    <fieldset style={{ border: 'none', padding: 0, margin: 0 }}>
+                        <legend style={{ fontWeight: 600, fontSize: '0.95rem', marginBottom: '0.75rem', display: 'block' }}>
+                            Will you bring a guest? <span style={{ color: 'var(--gold)' }}>*</span>
+                        </legend>
+                        <div style={{ display: 'flex', gap: '2rem' }}>
+                            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
+                                <input
+                                    type="radio"
+                                    name="bringGuest"
+                                    value="yes"
+                                    checked={formData.bringGuest === 'yes'}
+                                    onChange={handleChange}
+                                    required
+                                    style={{ cursor: 'pointer' }}
+                                />
+                                Yes
+                            </label>
+                            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
+                                <input
+                                    type="radio"
+                                    name="bringGuest"
+                                    value="no"
+                                    checked={formData.bringGuest === 'no'}
+                                    onChange={handleChange}
+                                    required
+                                    style={{ cursor: 'pointer' }}
+                                />
+                                No
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                {/* Guest Name */}
+                {formData.bringGuest === 'yes' && (
+                    <div style={{ marginBottom: '2rem' }}>
+                        <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600, fontSize: '0.95rem' }}>
+                            Guest Name
+                        </label>
+                        <input
+                            type="text"
+                            name="guestName"
+                            value={formData.guestName}
+                            onChange={handleChange}
+                            style={{
+                                width: '100%',
+                                padding: '0.75rem',
+                                border: '1px solid var(--gray)',
+                                borderRadius: '0',
+                                fontSize: '0.95rem',
+                                boxSizing: 'border-box'
+                            }}
+                            placeholder="Enter guest's full name"
+                        />
+                    </div>
+                )}
+
+                {/* Dietary Requirements */}
+                <div style={{ marginBottom: '2rem' }}>
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600, fontSize: '0.95rem' }}>
+                        Dietary Requirements
+                    </label>
+                    <textarea
+                        name="dietary"
+                        value={formData.dietary}
+                        onChange={handleChange}
+                        style={{
+                            width: '100%',
+                            padding: '0.75rem',
+                            border: '1px solid var(--gray)',
+                            borderRadius: '0',
+                            fontSize: '0.95rem',
+                            boxSizing: 'border-box',
+                            minHeight: '80px',
+                            fontFamily: 'inherit'
+                        }}
+                        placeholder="E.g., vegetarian, vegan, allergies, etc."
+                    />
+                </div>
+
+                {/* Hotel Selection */}
+                <div style={{ marginBottom: '2rem' }}>
+                    <fieldset style={{ border: 'none', padding: 0, margin: 0 }}>
+                        <legend style={{ fontWeight: 600, fontSize: '0.95rem', marginBottom: '0.75rem', display: 'block' }}>
+                            Hotel Selection <span style={{ color: 'var(--gold)' }}>*</span>
+                        </legend>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
+                                <input
+                                    type="radio"
+                                    name="hotelSelection"
+                                    value="hotel-arts"
+                                    checked={formData.hotelSelection === 'hotel-arts'}
+                                    onChange={handleChange}
+                                    required
+                                    style={{ cursor: 'pointer' }}
+                                />
+                                Hotel Arts Barcelona
+                            </label>
+                            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
+                                <input
+                                    type="radio"
+                                    name="hotelSelection"
+                                    value="other"
+                                    checked={formData.hotelSelection === 'other'}
+                                    onChange={handleChange}
+                                    required
+                                    style={{ cursor: 'pointer' }}
+                                />
+                                Other
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                {/* Arrival Date */}
+                <div style={{ marginBottom: '2rem' }}>
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600, fontSize: '0.95rem' }}>
+                        Arrival Date <span style={{ color: 'var(--gold)' }}>*</span>
+                    </label>
+                    <input
+                        type="date"
+                        name="arrivalDate"
+                        value={formData.arrivalDate}
+                        onChange={handleChange}
+                        required
+                        style={{
+                            width: '100%',
+                            padding: '0.75rem',
+                            border: '1px solid var(--gray)',
+                            borderRadius: '0',
+                            fontSize: '0.95rem',
+                            boxSizing: 'border-box'
+                        }}
+                    />
+                </div>
+
+                {/* Departure Date */}
+                <div style={{ marginBottom: '2rem' }}>
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600, fontSize: '0.95rem' }}>
+                        Departure Date <span style={{ color: 'var(--gold)' }}>*</span>
+                    </label>
+                    <input
+                        type="date"
+                        name="departureDate"
+                        value={formData.departureDate}
+                        onChange={handleChange}
+                        required
+                        style={{
+                            width: '100%',
+                            padding: '0.75rem',
+                            border: '1px solid var(--gray)',
+                            borderRadius: '0',
+                            fontSize: '0.95rem',
+                            boxSizing: 'border-box'
+                        }}
+                    />
+                </div>
+
+                {/* Submit Button */}
+                <div style={{ marginTop: '3rem', textAlign: 'center' }}>
+                    <button
+                        type="submit"
+                        className="btn btn-gold"
+                        style={{ minWidth: '200px' }}
+                    >
+                        Submit RSVP
+                    </button>
+                </div>
+            </form>
+        </div>
+    );
+};
+
+export default RSVP;

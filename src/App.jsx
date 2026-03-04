@@ -4,7 +4,9 @@ import Home from './pages/Home';
 import Itinerary from './pages/Itinerary';
 import Travel from './pages/Travel';
 import FAQs from './pages/FAQs';
+import RSVP from './pages/RSVP';
 import Navbar from './components/Navbar';
+import logo from './assets/logo.png';
 
 const PasswordProtection = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -28,8 +30,8 @@ const PasswordProtection = ({ children }) => {
 
   return (
     <div className="password-screen animate-fade-in">
-      <h2>DV 49.99th</h2>
-      <p style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', marginBottom: '2rem' }}>Barcelona, Spain &nbsp;&middot;&nbsp; 2026</p>
+      <img src={logo} alt="DV 49.99th Barcelona" style={{ height: 'auto', width: '120px' }} />
+      <p style={{ fontFamily: 'var(--font-serif)', fontStyle: 'normal', marginBottom: '1rem' }}>Barcelona, Spain &nbsp;&middot;&nbsp; 2026</p>
       <form onSubmit={handleSubmit} className="password-form">
         <input
           type="password"
@@ -56,7 +58,7 @@ const ScrollToTop = () => {
 
 const Footer = () => (
   <footer className="footer section">
-    <p>&copy; {new Date().getFullYear()} Danladi49-9.com &nbsp;|&nbsp; DV 49.99th Celebration</p>
+    <p>&copy; {new Date().getFullYear()} Danladi 49.99<sup>th</sup></p>
   </footer>
 );
 
@@ -72,6 +74,7 @@ function App() {
             <Route path="/itinerary" element={<Itinerary />} />
             <Route path="/travel" element={<Travel />} />
             <Route path="/faqs" element={<FAQs />} />
+            <Route path="/rsvp" element={<RSVP />} />
           </Routes>
         </main>
         <Footer />

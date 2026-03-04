@@ -16,11 +16,13 @@ const Travel = () => {
                     <Plane size={48} strokeWidth={1} />
                     <h3>Flights</h3>
                     <p>
-                        We recommend flying into <strong>Josep Tarradellas Barcelona-El Prat Airport (BCN)</strong>, which is the only international airport in Barcelona, Spain.
+                        We recommend flying into <strong>Josep Tarradellas Barcelona-El Prat Airport</strong>, which is the only international airport in Barcelona, Spain. Please consider booking your flights early to secure the best rates. Upon arrival, taxis and Ubers are readily available for your convenient transportation to the hotel.
                     </p>
-                    <p>
-                        Please consider booking your flights early to secure the best rates. Upon arrival, taxis and Ubers are readily available for your convenient transportation to the hotel.
-                    </p>
+                    <div style={{ margin: '1.5rem 0', padding: '1rem', backgroundColor: '#f5f5f5', borderRadius: '4px', fontSize: '0.9rem' }}>
+                        <p><strong>Transfer time to hotel:</strong> approximately 20 minutes</p>
+                        <p style={{ marginTop: '0.75rem' }}><strong>Recommended arrival:</strong> Thursday before 15:00</p>
+                        <p style={{ marginTop: '0.75rem' }}><strong>Recommended departure:</strong> Sunday anytime</p>
+                    </div>
                     <a href="https://www.google.com/flights" target="_blank" rel="noreferrer" className="btn">Search Flights</a>
                 </div>
 
@@ -29,9 +31,12 @@ const Travel = () => {
                     <Building size={48} strokeWidth={1} />
                     <h3>Accommodation</h3>
                     <p>
-                        We have curated a selection of hotels for your convenience. Transportation will be provided to and from these hotels to ensure a seamless experience. Please proceed with making your booking here.
+                        A room block has been secured at <strong>Hotel Arts Barcelona</strong>, which serves as the primary hotel. Scheduled shuttles will depart from this hotel for all hosted events. Alternative accommodation options are also available.
                     </p>
-                    <a href="https://www.marriott.com/en-gb/event-reservations/reservation-link.mi?id=1768927128258&key=GRP&app=resvlink&_branch_match_id=1554240861956515237&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXTywo0MtNLCrKzC8p0UvOz9UvSi3OyczLtgdK2ALZZSCOWmaKraG5mYWlkbmhkYWRqYVadmqlrXtQgFpdUWpaKlB3Xnp8UlF%2BeXFqkW1wYlpiUSYA2ADg8WAAAAA%3D" target="_blank" rel="noreferrer" className="btn btn-gold">Book Hotel</a>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                        <a href="https://www.marriott.com/en-gb/event-reservations/reservation-link.mi?id=1768927128258&key=GRP&app=resvlink&_branch_match_id=1554240861956515237&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXTywo0MtNLCrKzC8p0UvOz9UvSi3OyczLtgdK2ALZZSCOWmaKraG5mYWlkbmhkYWRqYVadmqlrXtQgFpdUWpaKlB3Xnp8UlF%2BeXFqkW1wYlpiUSYA2ADg8WAAAAA%3D" target="_blank" rel="noreferrer" className="btn btn-gold">Book Hotel Arts</a>
+                        <a href="https://www.marriott.com/en-gb/event-reservations/reservation-link.mi?id=1768927128258&key=GRP&app=resvlink&_branch_match_id=1554240861956515237&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXTywo0MtNLCrKzC8p0UvOz9UvSi3OyczLtgdK2ALZZSCOWmaKraG5mYWlkbmhkYWRqYVadmqlrXtQgFpdUWpaKlB3Xnp8UlF%2BeXFqkW1wYlpiUSYA2ADg8WAAAAA%3D" target="_blank" rel="noreferrer" className="btn">Book Optional Hotels</a>
+                    </div>
                 </div>
             </div>
         </div>
