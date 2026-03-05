@@ -56,11 +56,6 @@ const ScrollToTop = () => {
   return null;
 }
 
-const Footer = () => (
-  <footer className="footer section">
-    <p>&copy; {new Date().getFullYear()} DV 49.99<sup>th</sup></p>
-  </footer>
-);
 
 function App() {
   return (
@@ -77,7 +72,6 @@ function App() {
             <Route path="/rsvp" element={<RSVP />} />
           </Routes>
         </main>
-        <Footer />
       </Router>
     </PasswordProtection>
   );

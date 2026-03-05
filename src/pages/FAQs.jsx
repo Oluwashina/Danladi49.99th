@@ -41,7 +41,7 @@ const FAQs = () => {
                 <div className="faq-item" style={{ marginBottom: '1.5rem' }}>
                     <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.1rem', marginBottom: '0.5rem', fontWeight: 600 }}>Who can I contact with questions?</h4>
                     <p style={{ color: 'var(--text-secondary)' }}>
-                        <a href="mailto:email@dv4999.com" style={{ color: 'var(--gold)', textDecoration: 'none', fontWeight: 500 }}>email@dv4999.com</a>
+                        <a href="mailto:email@dv4999.com" style={{ color: 'var(--gold)', textDecoration: 'none', fontWeight: 500 }}>hello@dv4999.com</a>
                     </p>
                 </div>
 

@@ -2,6 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Calendar, Users, Sparkles } from 'lucide-react';
 
+const Footer = () => (
+  <footer className="footer section">
+    <p>&copy; {new Date().getFullYear()} DV's 49.99<sup>th</sup></p>
+  </footer>
+);
+
 const Home = () => {
     return (
         <div className="animate-fade-in">
@@ -29,6 +35,7 @@ const Home = () => {
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
                     <Link to="/itinerary" className="btn">View Itinerary</Link>
                     <Link to="/travel" className="btn btn-gold">Travel & Accommodation</Link>
+                    <Link to="/rsvp" className="btn btn-gold">RSVP Now</Link>
                 </div>
             </section>
 
@@ -61,16 +68,16 @@ const Home = () => {
                 
                     <h3 style={{ fontSize: '1.3rem', marginBottom: '1.5rem', color: 'var(--gold)' }}>Why Barcelona?</h3>
                     <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-                        Barcelona holds a special place in my heart. Years of marathons across Spain brought me back here—where I ran, fell short of my goal by just four seconds, and made a memory I'll never forget.
+                        Barcelona holds a special place in my heart. Years of marathons across Spain brought me back here, where I ran, fell short of my goal by just four seconds, and made a memory I'll never forget.
                     </p>
                     <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-                        I'm not coming back to chase the clock. This time, I'm returning to celebrate a milestone surrounded by the people who make every finish line meaningful—my family and friends.
+                        I'm not coming back to chase the clock. This time, I'm returning to celebrate a milestone surrounded by the people who make every finish line meaningful, my family and friends.
                     </p>
                     <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8',marginBottom: '1.5rem' }}>
                         Barcelona gave me a reason to push harder. Now I want it to be the place where we celebrate together.
                     </p>
                      <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-                        Join us for an unforgettable weekend celebrating DV's milestone birthday. This isn't just a party—it's three days of carefully planned experiences designed to create lasting memories with friends and family in one of Europe's most enchanting cities.
+                        Join us for an unforgettable weekend celebrating DV's milestone birthday. This isn't just a party, it's three days of carefully planned experiences designed to create lasting memories with friends and family in one of Europe's most enchanting cities.
                     </p>
                 </div>
             </section>
@@ -271,6 +278,8 @@ const Home = () => {
                     <Link to="/faqs" className="btn">FAQs</Link>
                 </div>
             </section>
+
+            <Footer />
         </div>
     );
 };
