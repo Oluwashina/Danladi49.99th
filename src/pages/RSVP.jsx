@@ -14,6 +14,7 @@ const RSVP = () => {
         attendance: '',
         bringGuest: '',
         guestName: '',
+        guestDietary: '',
         dietary: '',
         hotelSelection: '',
         arrivalDate: '',
@@ -44,12 +45,13 @@ const RSVP = () => {
         const hotelDisplay = hotelMap[formData.hotelSelection] || formData.hotelSelection;
         
         const templateParams = {
-            to_email: 'thedevoluwashina@gmail.com',
+            to_email: 'shinzbaba@gmail.com',
             subject: `New RSVP from ${formData.fullName}`,
             from_email: formData.email,
             from_name: formData.fullName,
             attendance: formData.attendance,
             guest_name: formData.guestName || 'None',
+            guest_dietary: formData.guestDietary || 'None',
             bring_guest: formData.bringGuest,
             mobile: formData.mobileNumber,
             dietary: formData.dietary || 'None',
@@ -71,6 +73,7 @@ const RSVP = () => {
                         attendance: '',
                         bringGuest: '',
                         guestName: '',
+                        guestDietary: '',
                         dietary: '',
                         hotelSelection: '',
                         arrivalDate: '',
@@ -91,12 +94,12 @@ const RSVP = () => {
             <div className="container section" style={{ paddingTop: '15rem', paddingBottom: '15rem', textAlign: 'center' }}>
                 <div style={{ maxWidth: '500px', margin: '0 auto' }}>
                     <CheckCircle size={64} style={{ color: 'var(--gold)', marginBottom: '1.5rem' }} />
-                    <h2 style={{ fontSize: '2rem', marginBottom: '1rem', fontStyle: 'italic' }}>Thank You!</h2>
+                    <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', fontStyle: 'italic' }}>Thank you for your RSVP.</h2>
                     <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', marginBottom: '1.5rem' }}>
-                        Your RSVP has been received. We look forward to seeing you in Barcelona!
+                        We look forward to celebrating together in Barcelona.
                     </p>
-                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                        A confirmation email will be sent to you shortly.
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem' }}>
+                        You will receive a confirmation email shortly.
                     </p>
                 </div>
             </div>
@@ -104,10 +107,10 @@ const RSVP = () => {
     }
 
     return (
-        <div className="container section animate-fade-in" style={{ paddingTop: '10rem', paddingBottom: '6rem' }}>
+        <div className="container section animate-fade-in" style={{ paddingTop: '10rem', paddingBottom: '6rem', borderBottom: '1px solid rgba(184, 154, 91, 0.2)' }}>
             <h1 className="page-title">RSVP</h1>
             <p style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto 3rem', color: 'var(--text-secondary)', fontSize: '1.1rem' }}>
-                Please complete this form to confirm your attendance. Kindly confirm on or before March 20, 2026.
+                Please complete the form below to confirm your attendance. Kindly RSVP by March 20, 2026.
             </p>
 
             <form onSubmit={handleSubmit} style={{ maxWidth: '600px', margin: '0 auto' }}>
@@ -125,7 +128,7 @@ const RSVP = () => {
                         style={{
                             width: '100%',
                             padding: '0.75rem',
-                            border: '1px solid var(--gray)',
+                            border: '1px solid var(--gold)',
                             borderRadius: '0',
                             fontSize: '16px',
                             boxSizing: 'border-box'
@@ -148,7 +151,7 @@ const RSVP = () => {
                         style={{
                             width: '100%',
                             padding: '0.75rem',
-                            border: '1px solid var(--gray)',
+                            border: '1px solid var(--gold)',
                             borderRadius: '0',
                             fontSize: '16px',
                             boxSizing: 'border-box'
@@ -171,7 +174,7 @@ const RSVP = () => {
                         style={{
                             width: '100%',
                             padding: '0.75rem',
-                            border: '1px solid var(--gray)',
+                            border: '1px solid var(--gold)',
                             borderRadius: '0',
                             fontSize: '16px',
                             boxSizing: 'border-box'
@@ -252,26 +255,50 @@ const RSVP = () => {
 
                 {/* Guest Name */}
                 {formData.bringGuest === 'yes' && (
-                    <div style={{ marginBottom: '2rem' }}>
-                        <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600, fontSize: '0.95rem' }}>
-                            Guest Name
-                        </label>
-                        <input
-                            type="text"
-                            name="guestName"
-                            value={formData.guestName}
-                            onChange={handleChange}
-                            style={{
-                                width: '100%',
-                                padding: '0.75rem',
-                                border: '1px solid var(--gray)',
-                                borderRadius: '0',
-                                fontSize: '16px',
-                                boxSizing: 'border-box'
-                            }}
-                            placeholder="Enter guest's full name"
-                        />
-                    </div>
+                    <>
+                        <div style={{ marginBottom: '2rem' }}>
+                            <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600, fontSize: '0.95rem' }}>
+                                Guest Name
+                            </label>
+                            <input
+                                type="text"
+                                name="guestName"
+                                value={formData.guestName}
+                                onChange={handleChange}
+                                style={{
+                                    width: '100%',
+                                    padding: '0.75rem',
+                                    border: '1px solid var(--gold)',
+                                    borderRadius: '0',
+                                    fontSize: '16px',
+                                    boxSizing: 'border-box'
+                                }}
+                                placeholder="Enter guest's full name"
+                            />
+                        </div>
+
+                        <div style={{ marginBottom: '2rem' }}>
+                            <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600, fontSize: '0.95rem' }}>
+                                Guest Dietary Requirements
+                            </label>
+                            <textarea
+                                name="guestDietary"
+                                value={formData.guestDietary || ''}
+                                onChange={handleChange}
+                                style={{
+                                    width: '100%',
+                                    padding: '0.75rem',
+                                    border: '1px solid var(--gold)',
+                                    borderRadius: '0',
+                                    fontSize: '16px',
+                                    boxSizing: 'border-box',
+                                    minHeight: '80px',
+                                    fontFamily: 'inherit'
+                                }}
+                                placeholder="E.g., vegetarian, vegan, allergies, etc."
+                            />
+                        </div>
+                    </>
                 )}
 
                 {/* Dietary Requirements */}
@@ -286,7 +313,7 @@ const RSVP = () => {
                         style={{
                             width: '100%',
                             padding: '0.75rem',
-                            border: '1px solid var(--gray)',
+                            border: '1px solid var(--gold)',
                             borderRadius: '0',
                             fontSize: '16px',
                             boxSizing: 'border-box',
@@ -346,12 +373,15 @@ const RSVP = () => {
                         style={{
                             width: '100%',
                             padding: '0.75rem',
-                            border: '1px solid var(--gray)',
+                            border: '1px solid var(--gold)',
                             borderRadius: '0',
                             fontSize: '16px',
                             boxSizing: 'border-box'
                         }}
                     />
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginTop: '0.5rem', fontStyle: 'normal' }}>
+                        Recommended arrival: Thursday before 15:00
+                    </p>
                 </div>
 
                 {/* Departure Date */}
@@ -368,12 +398,15 @@ const RSVP = () => {
                         style={{
                             width: '100%',
                             padding: '0.75rem',
-                            border: '1px solid var(--gray)',
+                            border: '1px solid var(--gold)',
                             borderRadius: '0',
                             fontSize: '16px',
                             boxSizing: 'border-box'
                         }}
                     />
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginTop: '0.5rem', fontStyle: 'normal' }}>
+                        Recommended departure: Sunday after 12:00
+                    </p>
                 </div>
 
                 {/* Submit Button */}
@@ -388,7 +421,7 @@ const RSVP = () => {
                             cursor: loading ? 'not-allowed' : 'pointer'
                         }}
                     >
-                        {loading ? 'Submitting...' : 'Submit RSVP'}
+                        {loading ? 'Submitting...' : 'Confirm RSVP'}
                     </button>
                 </div>
             </form>

@@ -28,9 +28,12 @@ const Home = () => {
 
             {/* Intro Section */}
             <section className="container section text-center">
-               <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', fontStyle: 'normal' }}>DV 49.99<sup>th</sup> Celebration</h2>
+               <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', fontStyle: 'normal', fontFamily: 'var(--font-serif)' }}>DV's 49.99<sup>th</sup> Celebration</h2>
+                <p style={{ maxWidth: '600px', margin: '1.5rem auto 1.5rem', color: 'var(--text-secondary)' }}>
+                    Join us in Barcelona to celebrate DV's 49.99<sup>th</sup> birthday.
+                </p>
                 <p style={{ maxWidth: '600px', margin: '0 auto 3rem', color: 'var(--text-secondary)' }}>
-                    We are thrilled to invite you to celebrate DV's 49.99<sup>th</sup> birthday in the vibrant city of Barcelona, Spain. A weekend of celebration and unforgettable memories awaits.
+                    A weekend of great company, beautiful surroundings, and memorable moments awaits.
                 </p>
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
                     <Link to="/itinerary" className="btn">View Itinerary</Link>
@@ -62,11 +65,11 @@ const Home = () => {
             </section>
 
             {/* About Weekend Section */}
-            <section className="container section">
-                <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '3rem', fontStyle: 'italic' }}>About the Weekend</h2>
+            <section className="container section" style={{ borderBottom: '1px solid rgba(184, 154, 91, 0.2)' }}>
+                <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '3rem', fontStyle: 'italic', fontFamily: 'var(--font-serif)' }}>About the Weekend</h2>
                 <div style={{ maxWidth: '800px', margin: '0 auto', backgroundColor: 'white', padding: '3rem', border: '1px solid var(--gray)' }}>
                 
-                    <h3 style={{ fontSize: '1.3rem', marginBottom: '1.5rem', color: 'var(--gold)' }}>Why Barcelona?</h3>
+                    <h3 style={{ fontSize: '1.3rem', marginBottom: '1.5rem', color: 'var(--gold)', fontFamily: 'var(--font-serif)' }}>Why Barcelona?</h3>
                     <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', marginBottom: '1.5rem' }}>
                         Barcelona holds a special place in my heart. Years of marathons across Spain brought me back here, where I ran, fell short of my goal by just four seconds, and made a memory I'll never forget.
                     </p>
@@ -84,10 +87,10 @@ const Home = () => {
 
 
             {/* The Weekend Section */}
-            <section style={{ backgroundColor: '#f9f7f3', padding: '5rem 5%' }}>
+            <section style={{ backgroundColor: '#f9f7f3', padding: '5rem 5%', borderBottom: '1px solid rgba(184, 154, 91, 0.2)' }}>
                 <div className="container">
 
-                <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '3rem', fontStyle: 'italic', color: 'var(--text-primary)' }}>Weekend Highlights</h2>
+                <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '3rem', fontStyle: 'italic', color: 'var(--text-primary)', fontFamily: 'var(--font-serif)' }}>Weekend Highlights</h2>
                 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem', maxWidth: '1000px', margin: '0 auto' }}>
                     {/* Thursday */}
@@ -103,7 +106,8 @@ const Home = () => {
                             marginBottom: '2rem', 
                             color: 'var(--text-primary)',
                             fontWeight: 600,
-                            letterSpacing: '0.5px'
+                            letterSpacing: '0.5px',
+                            fontFamily: 'var(--font-serif)'
                         }}>Thursday</h3>
                         
                         <div style={{ marginBottom: '1.5rem' }}>
@@ -119,7 +123,8 @@ const Home = () => {
                                 fontSize: '1.1rem', 
                                 marginBottom: '0.75rem', 
                                 fontWeight: 600,
-                                color: 'var(--text-primary)'
+                                color: 'var(--text-primary)',
+                                fontFamily: 'var(--font-serif)'
                             }}>Flamenco Welcome Party</h4>
                             <p style={{ 
                                 color: 'var(--text-secondary)', 
@@ -142,7 +147,8 @@ const Home = () => {
                             marginBottom: '2rem', 
                             color: 'var(--text-primary)',
                             fontWeight: 600,
-                            letterSpacing: '0.5px'
+                            letterSpacing: '0.5px',
+                            fontFamily: 'var(--font-serif)'
                         }}>Friday</h3>
                         
                         <div style={{ marginBottom: '2rem' }}>
@@ -158,7 +164,8 @@ const Home = () => {
                                 fontSize: '1.1rem', 
                                 marginBottom: '0.75rem', 
                                 fontWeight: 600,
-                                color: 'var(--text-primary)'
+                                color: 'var(--text-primary)',
+                                fontFamily: 'var(--font-serif)'
                             }}>Barcelona at Your Pace</h4>
                             <p style={{ 
                                 color: 'var(--text-secondary)', 
@@ -180,7 +187,8 @@ const Home = () => {
                                 fontSize: '1.1rem', 
                                 marginBottom: '0.75rem', 
                                 fontWeight: 600,
-                                color: 'var(--text-primary)'
+                                color: 'var(--text-primary)',
+                                fontFamily: 'var(--font-serif)'
                             }}>Barcelona by Sea</h4>
                             <p style={{ 
                                 color: 'var(--text-secondary)', 
@@ -203,7 +211,8 @@ const Home = () => {
                             marginBottom: '2rem', 
                             color: 'var(--text-primary)',
                             fontWeight: 600,
-                            letterSpacing: '0.5px'
+                            letterSpacing: '0.5px',
+                            fontFamily: 'var(--font-serif)'
                         }}>Saturday</h3>
                         
                         <div style={{ marginBottom: '2rem' }}>
@@ -219,7 +228,8 @@ const Home = () => {
                                 fontSize: '1.1rem', 
                                 marginBottom: '0.75rem', 
                                 fontWeight: 600,
-                                color: 'var(--text-primary)'
+                                color: 'var(--text-primary)',
+                                fontFamily: 'var(--font-serif)'
                             }}>49.99 Minutes of Wellness</h4>
                             <p style={{ 
                                 color: 'var(--text-secondary)', 
@@ -241,7 +251,8 @@ const Home = () => {
                                 fontSize: '1.1rem', 
                                 marginBottom: '0.75rem', 
                                 fontWeight: 600,
-                                color: 'var(--text-primary)'
+                                color: 'var(--text-primary)',
+                                fontFamily: 'var(--font-serif)'
                             }}>Birthday Dinner & Celebration</h4>
                             <p style={{ 
                                 color: 'var(--text-secondary)', 
@@ -268,7 +279,7 @@ const Home = () => {
 
             {/* CTA Section */}
             <section className="container section text-center">
-                <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', fontStyle: 'italic' }}>Ready for an Adventure?</h2>
+                <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', fontStyle: 'italic', fontFamily: 'var(--font-serif)' }}>Ready for an Adventure?</h2>
                 <p style={{ maxWidth: '600px', margin: '0 auto 2.5rem', color: 'var(--text-secondary)', fontSize: '1.1rem' }}>
                     Get all the details about travel, accommodations, itinerary, and everything you need to know.
                 </p>

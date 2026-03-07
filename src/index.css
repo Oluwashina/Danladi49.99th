@@ -51,6 +51,13 @@ a:hover {
   opacity: 0.6;
 }
 
+/* Superscript Styling */
+sup {
+  font-size: 0.65em;
+  vertical-align: super;
+  line-height: 0;
+}
+
 /* Base Utility Classes */
 .container {
   max-width: 1200px;
@@ -299,8 +306,7 @@ a:hover {
   font-family: var(--font-sans);
   font-size: 1rem;
   background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--text-primary);
+  border: 1px solid var(--gold);
   text-align: center;
   outline: none;
   letter-spacing: 0.1em;
@@ -308,13 +314,40 @@ a:hover {
 
 .password-input::placeholder {
   color: var(--text-secondary);
-  font-style: italic;
+  font-style: normal;
 }
 
 .error-msg {
   color: var(--red);
   font-size: 0.85rem;
   margin-top: -10px;
+}
+
+/* Form Input Styles */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+textarea {
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(184, 154, 91, 0.1);
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+input[type="date"]:hover,
+textarea:hover {
+  border-color: var(--gold);
 }
 
 /* Footer */
@@ -572,7 +605,7 @@ a:hover {
 .page-title {
   font-size: 3rem;
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -723,7 +756,7 @@ a:hover {
   }
 
   .container {
-    padding: 0 0.75rem;
+    padding: 1.5rem 0.75rem;
   }
 
   .stats-grid {
@@ -753,5 +786,18 @@ a:hover {
 
   .highlight-number {
     font-size: 2.5rem;
+  }
+
+  /* Mobile Form Optimization */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  textarea {
+    font-size: 16px; /* Prevents auto-zoom on mobile input focus */
+  }
+
+  form {
+    max-width: 100% !important;
   }
 }
