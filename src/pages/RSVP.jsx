@@ -44,6 +44,9 @@ const RSVP = () => {
 
         const hotelDisplay = hotelMap[formData.hotelSelection] || formData.hotelSelection;
         
+        // Extract first name from full name
+        const firstName = formData.fullName.split(' ')[0];
+
         const templateParams = {
             to_email: 'shinzbaba@gmail.com',
             subject: `New RSVP from ${formData.fullName}`,
@@ -60,11 +63,30 @@ const RSVP = () => {
             departure: formData.departureDate
         };
 
+        // Confirmation email template params
+        const confirmationParams = {
+            to_email: formData.email,
+            subject: `Your RSVP Confirmation for DV's 49.99th Birthday Celebration`,
+            first_name: firstName,
+            reply_to: 'hello@dv4999.com'
+        };
+
+        // Send admin email first, then confirmation email in background
         emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, templateParams)
             .then((response) => {
-                console.log('Email sent successfully:', response);
+                console.log('Admin email sent successfully:', response);
                 setLoading(false);
                 setSubmitted(true);
+
+                // Send confirmation email in background (non-blocking)
+                emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_CONFIRMATION_TEMPLATE_ID, confirmationParams)
+                    .then((confirmResponse) => {
+                        console.log('Confirmation email sent successfully:', confirmResponse);
+                    })
+                    .catch((confirmError) => {
+                        console.error('Error sending confirmation email:', confirmError);
+                    });
+
                 setTimeout(() => {
                     setFormData({
                         fullName: '',
@@ -83,7 +105,7 @@ const RSVP = () => {
                 }, 3000);
             })
             .catch((error) => {
-                console.error('Error sending email:', error);
+                console.error('Error sending RSVP email:', error);
                 setLoading(false);
                 alert('There was an error submitting your RSVP. Please try again.');
             });
