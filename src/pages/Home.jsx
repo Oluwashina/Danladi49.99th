@@ -28,7 +28,9 @@ const Home = () => {
 
             {/* Intro Section */}
             <section className="container section text-center">
-               <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', fontStyle: 'normal', fontFamily: 'var(--font-serif)' }}>DV's 49.99<sup>th</sup> Celebration</h2>
+               <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', fontStyle: 'normal', fontFamily: 'var(--font-sans)' }}>
+                    DV's 49.99<sup style={{ fontSize: '1.5rem', verticalAlign: 'super', position: 'relative', top: '-0.3em' }}>th</sup> Celebration
+                </h2>
                 <p style={{ maxWidth: '600px', margin: '1.5rem auto 1.5rem', color: 'var(--text-secondary)' }}>
                     Join us in Barcelona to celebrate DV's 49.99<sup>th</sup> birthday.
                 </p>

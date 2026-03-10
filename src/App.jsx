@@ -6,7 +6,7 @@ import Travel from './pages/Travel';
 import FAQs from './pages/FAQs';
 import RSVP from './pages/RSVP';
 import Navbar from './components/Navbar';
-import logo from './assets/logo.png';
+import logo from './assets/newlogo.png';
 
 const PasswordProtection = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -30,7 +30,7 @@ const PasswordProtection = ({ children }) => {
 
   return (
     <div className="password-screen animate-fade-in">
-      <img src={logo} alt="DV 49.99th Barcelona" style={{ height: 'auto', width: '120px' }} />
+      <img src={logo} alt="DV 49.99th Barcelona" style={{ height: 'auto', width: '180px' }} />
       <p style={{ fontFamily: 'var(--font-serif)', fontStyle: 'normal', marginBottom: '1rem' }}>Barcelona, Spain &nbsp;&middot;&nbsp; 2026</p>
       <form onSubmit={handleSubmit} className="password-form">
         <input
