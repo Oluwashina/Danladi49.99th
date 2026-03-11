@@ -48,7 +48,8 @@ const RSVP = () => {
         const firstName = formData.fullName.split(' ')[0];
 
         const templateParams = {
-            to_email: 'hello@dv4999.com',
+            to_email: 'shinzbaba@gmail.com',
+            // to_email: 'hello@dv4999.com',
             subject: `New RSVP from ${formData.fullName}`,
             from_email: formData.email,
             from_name: formData.fullName,
@@ -71,21 +72,21 @@ const RSVP = () => {
             reply_to: 'hello@dv4999.com'
         };
 
-        // Send admin email first, then confirmation email in background
+        // Send admin email (blocking) - this is the critical one
         emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, templateParams)
             .then((response) => {
-                console.log('Admin email sent successfully:', response);
+                console.log('Admin email sent:', response);
                 setLoading(false);
                 setSubmitted(true);
 
-                // Send confirmation email in background (non-blocking)
-                emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_CONFIRMATION_TEMPLATE_ID, confirmationParams)
-                    .then((confirmResponse) => {
-                        console.log('Confirmation email sent successfully:', confirmResponse);
-                    })
-                    .catch((confirmError) => {
-                        console.error('Error sending confirmation email:', confirmError);
-                    });
+                // Fire confirmation email completely detached - don't block UI
+                setTimeout(() => {
+                    emailjs.send(
+                        import.meta.env.VITE_EMAILJS_SERVICE_ID, 
+                        import.meta.env.VITE_EMAILJS_CONFIRMATION_TEMPLATE_ID, 
+                        confirmationParams
+                    ).catch(() => {}); // Silently fail - admin already has the RSVP
+                }, 0);
 
                 setTimeout(() => {
                     setFormData({
