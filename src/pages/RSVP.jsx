@@ -48,8 +48,7 @@ const RSVP = () => {
         const firstName = formData.fullName.split(' ')[0];
 
         const templateParams = {
-            to_email: 'shinzbaba@gmail.com',
-            // to_email: 'hello@dv4999.com',
+            to_email: 'hello@dv4999.com',
             subject: `New RSVP from ${formData.fullName}`,
             from_email: formData.email,
             from_name: formData.fullName,
