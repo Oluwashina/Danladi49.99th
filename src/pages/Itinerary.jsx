@@ -19,10 +19,10 @@ const Itinerary = () => {
                         <div className="event-block" style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid var(--gray)' }}>
                             <h4>Flamenco Welcome Party</h4>
                             <p><strong>Time:</strong> 17:00</p>
-                            <p><strong>Venue:</strong> Palauet d'Orsà, Barcelona Spain</p>
+                            <p><strong>Location:</strong> Palauet d’Ors, Barcelona, Spain</p>
                             <p><strong>Dress Code:</strong> All Black</p>
                             <p style={{ marginTop: '1rem', fontStyle: 'italic', fontSize: '0.85rem' }}>
-                                * Shuttle buses will be provided from the hotel to the venue and back.
+                                * Shuttle buses will be provided from the hotel to the Location and back.
                             </p>
                         </div>
                     </div>
@@ -44,7 +44,7 @@ const Itinerary = () => {
                         <div className="event-block" style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid var(--gray)' }}>
                             <h4>Evening: Barcelona by Sea</h4>
                             <p><strong>Time:</strong> 16:20</p>
-                            <p><strong>Venue:</strong> The Catamaran, Barcelona</p>
+                            <p><strong>Location:</strong> The Catamaran, Barcelona</p>
                             <p><strong>Dress Code:</strong> Shades of Blue</p>
                             <p style={{ marginTop: '1rem', fontStyle: 'italic', fontSize: '0.85rem' }}>
                                 * Shuttle buses will be provided from the hotel to the port and back.
@@ -62,15 +62,15 @@ const Itinerary = () => {
                         <div className="event-block">
                             <h4>Morning: 49.99 Minutes of Wellness</h4>
                             <p><strong>Time:</strong> TBC</p>
-                            <p><strong>Venue:</strong> Hotel's Beachfront Area</p>
+                            <p><strong>Location:</strong> Hotel's Beachfront Area</p>
                         </div>
                         <div className="event-block" style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid var(--gray)' }}>
                             <h4>Evening: Birthday Dinner and Celebration</h4>
                             <p><strong>Time:</strong> 17:00</p>
-                            <p><strong>Venue:</strong> The Sea Garden, Ciutat Vella, Barcelona</p>
+                            <p><strong>Location:</strong> The Sea Garden, Ciutat Vella, Barcelona</p>
                             <p><strong>Dress Code:</strong> Cocktail Elegant (No tie required)</p>
                             <p style={{ marginTop: '1rem', fontStyle: 'italic', fontSize: '0.85rem' }}>
-                                * Shuttle buses will be provided from the hotel to the venue and back.
+                                * Shuttle buses will be provided from the hotel to the Location and back.
                             </p>
                         </div>
                     </div>
