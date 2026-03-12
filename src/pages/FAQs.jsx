@@ -8,12 +8,12 @@ const FAQs = () => {
 
                 <div className="faq-item" style={{ marginBottom: '1.5rem', borderBottom: '1px solid var(--gray)', paddingBottom: '1.5rem' }}>
                     <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.1rem', marginBottom: '0.5rem', fontWeight: 600 }}>Are children welcome?</h4>
-                    <p style={{ color: 'var(--text-secondary)' }}>Yes.</p>
+                    <p style={{ color: 'var(--text-secondary)' }}>Yes, children are welcome.</p>
                 </div>
 
                 <div className="faq-item" style={{ marginBottom: '1.5rem', borderBottom: '1px solid var(--gray)', paddingBottom: '1.5rem' }}>
                     <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.1rem', marginBottom: '0.5rem', fontWeight: 600 }}>May I bring a guest?</h4>
-                    <p style={{ color: 'var(--text-secondary)' }}>Yes. Please indicate in your RSVP.</p>
+                    <p style={{ color: 'var(--text-secondary)' }}>Yes. Please indicate this when completing your RSVP.</p>
                 </div>
 
                 <div className="faq-item" style={{ marginBottom: '1.5rem', borderBottom: '1px solid var(--gray)', paddingBottom: '1.5rem' }}>
@@ -40,7 +40,7 @@ const FAQs = () => {
                 <div className="faq-item" style={{ marginBottom: '1.5rem', borderBottom: '1px solid var(--gray)', paddingBottom: '1.5rem' }}>
                     <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.1rem', marginBottom: '0.5rem', fontWeight: 600 }}>What will the weather be like?</h4>
                     <p style={{ color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>Barcelona in May typically ranges between 16–23°C (60–73°F).</p>
-                    <p style={{ color: 'var(--text-secondary)' }}>Evenings near the water can be cool, so a light jacket is recommended.</p>
+                    <p style={{ color: 'var(--text-secondary)' }}>Evenings near the water can be cooler, so bringing a light jacket is recommended.</p>
                 </div>
 
                 <div className="faq-item" style={{ marginBottom: '1.5rem', borderBottom: '1px solid var(--gray)', paddingBottom: '1.5rem' }}>

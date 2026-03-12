@@ -29,13 +29,13 @@ const Home = () => {
             {/* Intro Section */}
             <section className="container section text-center">
                <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', fontStyle: 'normal', fontFamily: 'var(--font-sans)' }}>
-                    DV's 49.99<sup style={{ fontSize: '1.5rem', verticalAlign: 'super', position: 'relative', top: '-0.3em' }}>th</sup> Celebration
+                    Barcelona 2026 - A Weekend Celebration
                 </h2>
                 <p style={{ maxWidth: '600px', margin: '1.5rem auto 1.5rem', color: 'var(--text-secondary)' }}>
-                    Join us in Barcelona to celebrate DV's 49.99<sup>th</sup> birthday.
+                    Join us in Barcelona as we celebrate DV's 49.99th birthday.
                 </p>
                 <p style={{ maxWidth: '600px', margin: '0 auto 3rem', color: 'var(--text-secondary)' }}>
-                    A weekend of great company, beautiful surroundings, and memorable moments awaits.
+                    It will be a relaxed weekend of great company, beautiful surroundings, and memorable moments together.
                 </p>
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
                     <Link to="/itinerary" className="btn">View Itinerary</Link>
@@ -49,8 +49,8 @@ const Home = () => {
                 <div className="stats-grid">
                     <div className="stat-card animate-fade-in delay-100">
                         <Calendar size={32} style={{ color: 'var(--gold)', marginBottom: '1rem' }} />
-                        <h3>3 Days</h3>
-                        <p style={{ color: 'var(--text-secondary)' }}>Of celebration & festivities</p>
+                        <h3>Three Days</h3>
+                        <p style={{ color: 'var(--text-secondary)' }}>Of celebration and memories</p>
                     </div>
                     <div className="stat-card animate-fade-in delay-200">
                         <MapPin size={32} style={{ color: 'var(--gold)', marginBottom: '1rem' }} />
@@ -73,17 +73,15 @@ const Home = () => {
                 
                     <h3 style={{ fontSize: '1.3rem', marginBottom: '1.5rem', color: 'var(--gold)', fontFamily: 'var(--font-serif)' }}>Why Barcelona?</h3>
                     <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-                        Barcelona holds a special place in my heart. Years of marathons across Spain brought me back here, where I ran, fell short of my goal by just four seconds, and made a memory I'll never forget.
+                        Barcelona holds a special place in my heart. After years of running marathons across Spain, I returned here for a race where I missed my goal by just four seconds. It was unforgettable.
                     </p>
                     <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-                        I'm not coming back to chase the clock. This time, I'm returning to celebrate a milestone surrounded by the people who make every finish line meaningful, my family and friends.
+                        This time I'm not coming back to chase the clock. I'm coming back to celebrate a milestone surrounded by the people who make every finish line meaningful — family and friends.
                     </p>
                     <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8',marginBottom: '1.5rem' }}>
-                        Barcelona gave me a reason to push harder. Now I want it to be the place where we celebrate together.
+                        Barcelona has always reminded me that the journey matters as much as the finish line.
                     </p>
-                     <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-                        Join us for an unforgettable weekend celebrating DV's milestone birthday. This isn't just a party, it's three days of carefully planned experiences designed to create lasting memories with friends and family in one of Europe's most enchanting cities.
-                    </p>
+                  
                 </div>
             </section>
 
@@ -126,13 +124,13 @@ const Home = () => {
                                 marginBottom: '0.75rem', 
                                 fontWeight: 600,
                                 color: 'var(--text-primary)',
-                                fontFamily: 'var(--font-serif)'
+                                fontFamily: 'var(--font-sans)'
                             }}>Flamenco Welcome Party</h4>
                             <p style={{ 
                                 color: 'var(--text-secondary)', 
                                 fontSize: '0.9rem',
                                 lineHeight: '1.6'
-                            }}>An evening of music, tapas, and reunion.</p>
+                            }}>An evening of flamenco, tapas, and the chance to reconnect as the weekend begins.</p>
                         </div>
                     </div>
 
@@ -167,7 +165,7 @@ const Home = () => {
                                 marginBottom: '0.75rem', 
                                 fontWeight: 600,
                                 color: 'var(--text-primary)',
-                                fontFamily: 'var(--font-serif)'
+                                fontFamily: 'var(--font-sans)'
                             }}>Barcelona at Your Pace</h4>
                             <p style={{ 
                                 color: 'var(--text-secondary)', 
@@ -190,13 +188,13 @@ const Home = () => {
                                 marginBottom: '0.75rem', 
                                 fontWeight: 600,
                                 color: 'var(--text-primary)',
-                                fontFamily: 'var(--font-serif)'
+                                fontFamily: 'var(--font-sans)'
                             }}>Barcelona by Sea</h4>
                             <p style={{ 
                                 color: 'var(--text-secondary)', 
                                 fontSize: '0.9rem',
                                 lineHeight: '1.6'
-                            }}>An enchanting evening on the Mediterranean.</p>
+                            }}>An evening on the Mediterranean enjoying the city from the water.</p>
                         </div>
                     </div>
 
@@ -231,13 +229,13 @@ const Home = () => {
                                 marginBottom: '0.75rem', 
                                 fontWeight: 600,
                                 color: 'var(--text-primary)',
-                                fontFamily: 'var(--font-serif)'
+                                fontFamily: 'var(--font-sans)'
                             }}>49.99 Minutes of Wellness</h4>
                             <p style={{ 
                                 color: 'var(--text-secondary)', 
                                 fontSize: '0.9rem',
                                 lineHeight: '1.6'
-                            }}>Rejuvenate with wellness and relaxation.</p>
+                            }}>A relaxed morning focused on wellness and recovery.</p>
                         </div>
 
                         <div style={{ borderTop: '1px solid var(--gray)', paddingTop: '2rem' }}>
@@ -254,13 +252,13 @@ const Home = () => {
                                 marginBottom: '0.75rem', 
                                 fontWeight: 600,
                                 color: 'var(--text-primary)',
-                                fontFamily: 'var(--font-serif)'
+                                fontFamily: 'var(--font-sans)'
                             }}>Birthday Dinner & Celebration</h4>
                             <p style={{ 
                                 color: 'var(--text-secondary)', 
                                 fontSize: '0.9rem',
                                 lineHeight: '1.6'
-                            }}>An elegant evening to close the weekend.</p>
+                            }}>An elegant evening to bring the weekend to a close.</p>
                         </div>
                     </div>
                 </div>
