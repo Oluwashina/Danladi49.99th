@@ -59,8 +59,8 @@ const RSVP = () => {
             mobile: formData.mobileNumber,
             dietary: formData.dietary || 'None',
             hotel: hotelDisplay,
-            arrival: formData.arrivalDate,
-            departure: formData.departureDate
+            arrival: formData.arrivalDate || 'N/A',
+            departure: formData.departureDate || 'N/A'
         };
 
         // Confirmation email template params
@@ -382,54 +382,58 @@ const RSVP = () => {
                 </div>
 
                 {/* Arrival Date */}
-                <div style={{ marginBottom: '2rem' }}>
-                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600, fontSize: '0.95rem' }}>
-                        Arrival Date <span style={{ color: 'var(--gold)' }}>*</span>
-                    </label>
-                    <input
-                        type="date"
-                        name="arrivalDate"
-                        value={formData.arrivalDate}
-                        onChange={handleChange}
-                        required
-                        style={{
-                            width: '100%',
-                            padding: '0.75rem',
-                            border: '1px solid var(--gold)',
-                            borderRadius: '0',
-                            fontSize: '16px',
-                            boxSizing: 'border-box'
-                        }}
-                    />
-                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginTop: '0.5rem', fontStyle: 'normal' }}>
-                        Recommended arrival: Thursday before 15:00
-                    </p>
-                </div>
+                {formData.attendance === 'yes' && (
+                    <div style={{ marginBottom: '2rem' }}>
+                        <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600, fontSize: '0.95rem' }}>
+                            Arrival Date <span style={{ color: 'var(--gold)' }}>*</span>
+                        </label>
+                        <input
+                            type="date"
+                            name="arrivalDate"
+                            value={formData.arrivalDate}
+                            onChange={handleChange}
+                            required
+                            style={{
+                                width: '100%',
+                                padding: '0.75rem',
+                                border: '1px solid var(--gold)',
+                                borderRadius: '0',
+                                fontSize: '16px',
+                                boxSizing: 'border-box'
+                            }}
+                        />
+                        <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginTop: '0.5rem', fontStyle: 'normal' }}>
+                            Recommended arrival: Thursday before 15:00
+                        </p>
+                    </div>
+                )}
 
                 {/* Departure Date */}
-                <div style={{ marginBottom: '2rem' }}>
-                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600, fontSize: '0.95rem' }}>
-                        Departure Date <span style={{ color: 'var(--gold)' }}>*</span>
-                    </label>
-                    <input
-                        type="date"
-                        name="departureDate"
-                        value={formData.departureDate}
-                        onChange={handleChange}
-                        required
-                        style={{
-                            width: '100%',
-                            padding: '0.75rem',
-                            border: '1px solid var(--gold)',
-                            borderRadius: '0',
-                            fontSize: '16px',
-                            boxSizing: 'border-box'
-                        }}
-                    />
-                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginTop: '0.5rem', fontStyle: 'normal' }}>
-                        Recommended departure: Sunday after 12:00
-                    </p>
-                </div>
+                {formData.attendance === 'yes' && (
+                    <div style={{ marginBottom: '2rem' }}>
+                        <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600, fontSize: '0.95rem' }}>
+                            Departure Date <span style={{ color: 'var(--gold)' }}>*</span>
+                        </label>
+                        <input
+                            type="date"
+                            name="departureDate"
+                            value={formData.departureDate}
+                            onChange={handleChange}
+                            required
+                            style={{
+                                width: '100%',
+                                padding: '0.75rem',
+                                border: '1px solid var(--gold)',
+                                borderRadius: '0',
+                                fontSize: '16px',
+                                boxSizing: 'border-box'
+                            }}
+                        />
+                        <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginTop: '0.5rem', fontStyle: 'normal' }}>
+                            Recommended departure: Sunday after 12:00
+                        </p>
+                    </div>
+                )}
 
                 {/* Submit Button */}
                 <div style={{ marginTop: '3rem', textAlign: 'center' }}>
